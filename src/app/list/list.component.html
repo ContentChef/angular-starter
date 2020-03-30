@@ -1,0 +1,11 @@
+<div>
+    <app-card
+        *ngFor="let item of items"
+        [publicId]="item.publicId"
+        [title]="item.payload.title"
+        [image]="item.payload.image"
+        [url]="item.payload.url"
+        [description]="item.payload.description"
+        [cloudName]="item.requestContext.cloudName"
+    ></app-card>
+</div>
