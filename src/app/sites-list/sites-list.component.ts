@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IResponse } from '@contentchef/contentchef-node';
-import { ContentChefService } from '../contentChef';
+import { ContentChefService, Site } from '../contentChef';
 
 @Component({
   selector: 'app-sites-list',
@@ -8,7 +8,7 @@ import { ContentChefService } from '../contentChef';
   styleUrls: ['./sites-list.component.css'],
 })
 export class SitesListComponent implements OnInit {
-  sites: IResponse<object>[] = [];
+  sites: IResponse<Site>[] = [];
   constructor(private contentChefService: ContentChefService) {}
 
   async ngOnInit() {
