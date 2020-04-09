@@ -12,10 +12,8 @@ npm install # or yarn
 export class ContentChefService {
     constructor() {
         this.onlineChannel = configure({
-            apiKey: '<your api key>',
-            host: '<contentchef host>',
-            spaceId: '<your spaceId>',
-        }).onlineChannel('<your channel>');
+            spaceId: '<your spaceId>'
+        }).onlineChannel('<your online api key>', '<your channel>');
     }
 }
 

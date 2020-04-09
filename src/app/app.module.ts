@@ -9,7 +9,6 @@ import { ContentChefService } from './contentChef';
 import { SitesListComponent } from './sites-list/sites-list.component';
 import { SiteDetailComponent } from './site-detail/site-detail.component';
 import { RouterModule } from '@angular/router';
-import { CloudinaryService } from './cloudinary';
 
 @NgModule({
   declarations: [
@@ -28,8 +27,7 @@ import { CloudinaryService } from './cloudinary';
     ])
   ],
   providers: [
-    ContentChefService,
-    CloudinaryService
+    ContentChefService
   ],
   bootstrap: [AppComponent]
 })

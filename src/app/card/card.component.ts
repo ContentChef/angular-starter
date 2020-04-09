@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { CloudinaryService } from '../cloudinary';
+import { Component, Input } from '@angular/core';
+import { ContentChefService } from '../contentChef';
 
 @Component({
   selector: 'app-card',
@@ -14,9 +14,9 @@ export class CardComponent {
   @Input() publicId: string;
   @Input() cloudName: string;
 
-  constructor(private cloudinaryService: CloudinaryService) {}
+  constructor(private contentChefService: ContentChefService) {}
 
   getImageUrl() {
-    return this.cloudinaryService.createUrl(this.image, this.cloudName);
+    return this.contentChefService.createUrl(this.image);
   }
 }

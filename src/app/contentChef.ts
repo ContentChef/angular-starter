@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { configure, IOnlineChannelMethods } from '@contentchef/contentchef-node';
+import { configure, IOnlineChannelMethods, createUrl } from '@contentchef/contentchef-node';
 
 export interface Site {
     title: string;
@@ -15,10 +15,8 @@ export class ContentChefService {
     private onlineChannel: IOnlineChannelMethods;
     constructor() {
         this.onlineChannel = configure({
-            apiKey: '<your api key>',
-            host: '<contentchef host>',
             spaceId: '<your spaceId>',
-        }).onlineChannel('<your channel>');
+        }).onlineChannel('<your online api key>', '<your channel>');
     }
 
     async getSites() {
@@ -27,5 +25,9 @@ export class ContentChefService {
 
     async getSite(publicId: string) {
         return (await this.onlineChannel.content<Site>({publicId})).data;
+    }
+
+    createUrl(publicId: string) {
+        return createUrl(publicId);
     }
 }

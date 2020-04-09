@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContentChefService } from '../contentChef';
-import { CloudinaryService } from '../cloudinary';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-site-detail',
@@ -17,7 +16,6 @@ export class SiteDetailComponent implements OnInit {
   cloudName: string;
   constructor(
     private contentChefService: ContentChefService,
-    private cloudinaryService: CloudinaryService,
     private route: ActivatedRoute) { }
 
   async ngOnInit() {
@@ -34,7 +32,7 @@ export class SiteDetailComponent implements OnInit {
   }
 
   getImageUrl() {
-    return this.cloudinaryService.createUrl(this.image, this.cloudName);
+    return this.contentChefService.createUrl(this.image);
   }
 
 }
